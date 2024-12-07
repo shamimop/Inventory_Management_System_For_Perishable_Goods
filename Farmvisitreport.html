@@ -1,0 +1,79 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Report</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body> 
+    <header >
+        <h1> Farm visit Report </h1>
+    </header>
+    
+    <div class="main-content">
+
+
+<form action="processform.php" method="POST">
+      
+        <div class="card">
+          <div>
+  
+<br>
+<div>
+  <label for="fid" style="color:rgb(10, 9, 7);">Farm ID:</label>
+  <input type="text" id="fid" name="fid" placeholder="Farm id" required>
+</div>
+<br>
+<div>
+    <label for="bdate" style="color:rgb(15, 14, 12);">Inspection Date:</label>
+    <input type="date" id="bdate" name="visitdate">
+  </div>
+  <br>
+  <div>
+    <label for="Quality" style="color:rgb(14, 13, 11);"> Quality of Crops:</label>
+    
+    <select id="Quality" name="Quality">
+    <option> Good Quality</option>
+    <option>Medium Quality</option>
+    <option>Poor Quality</option>
+    </select>
+</div>
+  
+<br>
+ 
+<div>
+    <label for="OfficerId" style="color:rgb(10, 10, 10);">Officer Id:</label>
+    <input type="text" id="Officerid" name="AgriOfficerId" required >
+  </div>
+  <div>
+    <label for="Feedback" style="color:rgb(10, 10, 10);">Feedback:</label>
+    <input type="text" id="feedback" name="feedback" required >
+  </div>
+  <div>
+    <button type="submit" id="addButton">Add survey</button>
+    <button type="button" id="updateButton" style="display: none;">Update User</button>
+  </div>
+
+</form>
+        <table>
+          <thead>
+            <tr>
+              <th>Farm id</th>
+              <th>Feedback</th>
+              <th>Quality of Crops</th>
+              <th>Date</th>
+
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="surveyTable"></tbody>
+        </table>
+</body>
+</html>
