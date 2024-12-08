@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Dashboard</title>
     <link rel="stylesheet" href="styles.css">
-        
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    
 </head>
 <ul>
@@ -26,18 +27,20 @@
     </div>
     <div class="main-content">
         <div class="header">Survey Data</div>
+        
         <div class="cards">
+          
             <div class="card">
                 <h3>Graph</h3>
-                <div id="pieChart" class="pie-chart"></div>
-                <div class="legend" id="legend"> </div>
+                <canvas id="cropQualityChart"></canvas>
+                
                    
     </div>      
 </div>  
     </div> 
     
 
-    <div class="Table">
+<div class="Table">
                 <div class="header">Upcoming schedule</div>
                 <div class="cards">
                     <div class="card">
@@ -66,5 +69,6 @@
             </div>
                 
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
