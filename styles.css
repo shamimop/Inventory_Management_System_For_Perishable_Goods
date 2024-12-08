@@ -36,16 +36,17 @@ table {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    
 }
 
 .card {
-    background-color: white;
+    background-color: rgb(251, 255, 253);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
     flex: 1;
     min-width: 250px;
-    opacity: 0.3
+    opacity: 0.5;
 }
 .pie-chart {
     width: 200px;
