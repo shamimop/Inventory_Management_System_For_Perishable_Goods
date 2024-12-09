@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     
     
-    $sql = "INSERT INTO `tblfarmsurvey` (`AgriOfficerId`, `Inspection_Date`, `Feedback`, `Crop_Quality`, `Farm_id`) 
-        VALUES ('$AgriOfficerId', '$idate', '$feedback', '$cropQuality', '$farmid')";
+    $sql = "INSERT INTO crops (cropID, cropName, minimumTemperature, minimumHumidity, cropSeason) 
+            VALUES ('$cropID', '$cropName', '$minimumTemperature', '$minimumHumidity', '$cropSeason')";
+
 
 if ($conn->query($sql) === TRUE) {
     echo "Data saved successfully!";
