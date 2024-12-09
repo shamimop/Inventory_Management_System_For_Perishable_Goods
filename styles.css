@@ -103,3 +103,12 @@ ul {
             max-width: 700px;
             margin: 0 auto;
         }
+        input[type="text"] {
+          margin-bottom: 10px;
+          width: 500px; /* Adjust width */
+          height: 30px; /* Adjust height */
+          padding: 10px; /* Add padding for spacing */
+          font-size: 16px; /* Adjust font size */
+          border-radius: 5px; /* Optional: Add rounded corners */
+          border: 1px solid #ecaaaa; /* Optional: Customize border */
+      }

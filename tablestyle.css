@@ -1,6 +1,6 @@
 
 body{
-    background-image: url(bgimage.jpg);
+    background-image:url(bg2.jpg);
     
     background-repeat: no-repeat;
     background-position: center;
@@ -18,3 +18,4 @@ table {
     width: 100%;
     border-collapse: collapse;
   }
+  tr:hover {background-color: rgb(102, 122, 236);}
