@@ -36,7 +36,7 @@
 <br>
 <div>
     <label for="bdate" style="color:rgb(15, 14, 12);">Inspection Date:</label>
-    <input type="date" id="bdate" name="visitdate">
+    <input type="date" id="bdate" name="visitdate"  max="<?php echo date('Y-m-d');?>" required>
   </div>
   <br>
   <div>
@@ -65,18 +65,6 @@
   </div>
 
 </form>
-        <table>
-          <thead>
-            <tr>
-              <th>Farm id</th>
-              <th>Feedback</th>
-              <th>Quality of Crops</th>
-              <th>Date</th>
 
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="surveyTable"></tbody>
-        </table>
 </body>
 </html>

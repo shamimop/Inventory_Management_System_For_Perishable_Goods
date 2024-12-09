@@ -40,32 +40,16 @@ table {
 }
 
 .card {
-    background-color: rgb(251, 255, 253);
+    background-color: rgb(236, 243, 240);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
     flex: 1;
     min-width: 250px;
-    opacity: 0.5;
-}
-.pie-chart {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    opacity: 0.8;
 }
 
-.pie-chart::after {
-    content: "";
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-}
+
 
 .legend {
     margin-top: 20px;
