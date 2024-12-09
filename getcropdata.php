@@ -3,10 +3,10 @@ include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $CropID = $conn->real_escape_string($_POST['CropID']);
-    $idate = $conn->real_escape_string($_POST['visitdate']);
-    $feedback = $conn->real_escape_string($_POST['feedback']);
-    $cropQuality = $conn->real_escape_string($_POST['Quality']);
-    $farmid = $conn->real_escape_string($_POST['fid']);
+    $CropName = $conn->real_escape_string($_POST['CropName']);
+    $MinimumTemperature = $conn->real_escape_string($_POST['MinimumTemperature']);
+    $MinimumHumidity = $conn->real_escape_string($_POST['MinimumHumidity']);
+    $CropSeason = $conn->real_escape_string($_POST['CropSeason']);
 
     
     
