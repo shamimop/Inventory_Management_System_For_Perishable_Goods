@@ -2,25 +2,24 @@
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $CropID = $conn->real_escape_string($_POST['CropID']);
-    $CropName = $conn->real_escape_string($_POST['CropName']);
-    $MinimumTemperature = $conn->real_escape_string($_POST['MinimumTemperature']);
-    $MinimumHumidity = $conn->real_escape_string($_POST['MinimumHumidity']);
-    $CropSeason = $conn->real_escape_string($_POST['CropSeason']);
+    // Sanitize and fetch input values
+    $cropID = $conn->real_escape_string($_POST['cropID']);
+    $cropName = $conn->real_escape_string($_POST['cropName']);
+    $minimumTemperature = $conn->real_escape_string($_POST['MinimumTemperature']);
+    $minimumHumidity = $conn->real_escape_string($_POST['MinimumHumidity']);
+    $cropSeason = $conn->real_escape_string($_POST['cropSeason']);
 
-    
-    
-    
-    $sql = "INSERT INTO crops (cropID, cropName, minimumTemperature, minimumHumidity, cropSeason) 
+    // Insert data into the database
+    $sql = "INSERT INTO crop_t (cropID, cropName, minimumTemperature, minimumHumidity, cropSeason) 
             VALUES ('$cropID', '$cropName', '$minimumTemperature', '$minimumHumidity', '$cropSeason')";
 
+    if ($conn->query($sql) === TRUE) {
+        echo "New crop added successfully.";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 
-if ($conn->query($sql) === TRUE) {
-    echo "Data saved successfully!";
-} else {
-    echo "Error: " . $conn->error;
-}
-
-$conn->close();
+    // Close the connection
+    $conn->close();
 }
 ?>

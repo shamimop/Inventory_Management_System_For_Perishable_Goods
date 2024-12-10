@@ -15,24 +15,22 @@
     <main>
         <section class="add-crop">
             <h2>Add Crop</h2>
-            <form id="addCropForm">
+            <form id="addCropForm" action="getcropdata.php" method="POST">
                 <label for="cropID">Crop ID:</label>
                 <input type="text" id="cropID" name="cropID" required>
 
                 <label for="cropName">Crop Name:</label>
                 <input type="text" id="cropName" name="cropName" required>
-                
+
                 <label for="MinimumTemperature">Minimum Temperature:</label>
                 <input type="text" id="MinimumTemperature" name="MinimumTemperature" required>
+
                 <label for="MinimumHumidity">Minimum Humidity:</label>
                 <input type="text" id="MinimumHumidity" name="MinimumHumidity" required>
 
                 <label for="cropSeason">Crop Season:</label>
                 <input type="text" id="cropSeason" name="cropSeason" required>
 
-               
-                
-                
                 <button type="submit">Add Crop</button>
             </form>
         </section>
@@ -44,11 +42,9 @@
                     <tr>
                         <th>Crop ID</th>
                         <th>Crop Name</th>
-                
-                        <th>Crop Season</th>
                         <th>Minimum Temperature</th>
-                        <th>MinimumHumidity</th>
-                    
+                        <th>Minimum Humidity</th>
+                        <th>Crop Season</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,13 +53,10 @@
             </table>
         </section>
     </main>
+    
     <!-- Back to Home Button -->
     <div class="back-to-home">
         <a href="index.html">Back to Home</a>
     </div>
-
-
-
-    
 </body>
 </html>
