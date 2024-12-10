@@ -1,0 +1,21 @@
+
+body{
+    background-image:url(bg2.jpg);
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+} 
+table, td, th {
+    border: 1px solid;
+  }
+  
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  tr:hover {background-color: rgb(102, 122, 236);}
