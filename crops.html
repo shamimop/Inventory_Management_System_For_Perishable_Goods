@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System for Perishable Goods</title>
+    <link rel="stylesheet" href="cropsstyles.css">
+</head>
+<body>
+    <header>
+        <h1>Inventory Management System for Perishable Goods</h1>
+        <p>Manage your crop inventory effectively</p>
+    </header>
+
+    <main>
+        <section class="add-crop">
+            <h2>Add Crop</h2>
+            <form id="addCropForm" action="getcropdata.php" method="POST">
+                <label for="cropID">Crop ID:</label>
+                <input type="text" id="cropID" name="cropID" required>
+
+                <label for="cropName">Crop Name:</label>
+                <input type="text" id="cropName" name="cropName" required>
+
+                <label for="MinimumTemperature">Minimum Temperature:</label>
+                <input type="text" id="Minimum Temperature" name="MinimumTemperature" required>
+
+                <label for="minimumHumidity">Minimum Humidity:</label>
+                <input type="text" id="minimumHumidity" name="MinimumHumidity" required>
+
+                <label for="cropSeason">Crop Season:</label>
+                <input type="text" id="cropSeason" name="cropSeason" required>
+
+                <button type="submit">Add Crop</button>
+            </form>
+        </section>
+
+        <section class="crop-list">
+            <h2>Crop Inventory</h2>
+            <table id="cropTable">
+                <thead>
+                    <tr>
+                        <th>Crop ID</th>
+                        <th>Crop Name</th>
+                        <th>Minimum Temperature</th>
+                        <th>Minimum Humidity</th>
+                        <th>Crop Season</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Crop rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <!-- Back to Home Button -->
+    <div class="back-to-home">
+        <a href="index.html">Back to Home</a>
+    </div>
+</body>
+</html>
