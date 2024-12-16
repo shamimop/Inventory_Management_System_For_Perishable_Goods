@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Inventory Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+
+        <form id="loginForm">
+            <!-- Username Field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+            <!-- Password Field -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <!-- Role Selection -->
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+                <option value="admin">Admin</option>
+                <option value="supplier">Supplier</option>
+                <option value="producer">Producer</option>
+                <option value="nutritionist">Nutritionist</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Log In</button>
+        </form>
+
+        <!-- Back to Home Button -->
+        <div class="back-to-home">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user inputs
+            const role = document.getElementById('role').value;
+
+            // Redirect based on role selection
+            if (role === 'admin') {
+                window.location.href = 'admin-dashboard.html';
+            } else if (role === 'supplier') {
+                window.location.href = 'add-supplier.html';
+            } else if (role === 'producer') {
+                window.location.href = 'add-producer.html';
+            } else if (role === 'nutritionist') {
+                window.location.href = 'nutritionist.html'; // Assuming this page exists
+            }
+        });
+    </script>
+</body>
+</html>

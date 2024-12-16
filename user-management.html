@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="css/user-management.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for activity charts -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>User Management</h1>
+        <div class="logout-button">
+            <a href="admin-dashboard.html">Return to Dashboard</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- User Information Table -->
+        <section class="user-info">
+            <h2>Users Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Rows -->
+                    <tr>
+                        <td>001</td>
+                        <td>John Doe</td>
+                        <td>Admin</td>
+                        <td>john.doe@example.com</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Jane Smith</td>
+                        <td>Supplier</td>
+                        <td>jane.smith@example.com</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>David Lee</td>
+                        <td>Producer</td>
+                        <td>david.lee@example.com</td>
+                        <td>Active</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- User Activity Chart Section -->
+        <section class="user-activity">
+            <h2>User Activity Overview</h2>
+            <div class="chart-container">
+                <canvas id="userActivityChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // User Activity Chart
+        const ctx = document.getElementById('userActivityChart').getContext('2d');
+        const userActivityChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Admin', 'Supplier', 'Producer', 'Nutritionist'], // Roles
+                datasets: [{
+                    label: 'Active Users',
+                    data: [10, 7, 5, 8], // Example data
+                    backgroundColor: ['#FF6F61', '#6B8E23', '#4CAF50', '#FFD700'],
+                    borderColor: ['#FF6F61', '#6B8E23', '#4CAF50', '#FFD700'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

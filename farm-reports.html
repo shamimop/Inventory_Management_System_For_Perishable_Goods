@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Report</title>
+    <link rel="stylesheet" href="css/farm-reports.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="report-container">
+        <h2>Farm Report</h2>
+        <p>Analyze farm performance with relevant data and graphical insights.</p>
+
+        <!-- Graph Section -->
+        <div class="graphs-container">
+            <!-- Harvest Report -->
+            <div class="graph">
+                <h3>Harvest Report</h3>
+                <canvas id="harvestChart"></canvas>
+            </div>
+
+            <!-- Seeds Report -->
+            <div class="graph">
+                <h3>Seeds Report</h3>
+                <canvas id="seedsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Home Button -->
+    <div class="back-to-home">
+        <a href="admin-dashboard.html">Back to Dashboard</a>
+    </div>
+
+    <script>
+        // Harvest Report (Pie Chart)
+        const harvestCtx = document.getElementById('harvestChart').getContext('2d');
+        const harvestChart = new Chart(harvestCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Wheat', 'Rice', 'Corn', 'Barley'], // Example crops
+                datasets: [{
+                    label: 'Harvested Crops',
+                    data: [30, 40, 20, 10], // Example percentages
+                    backgroundColor: ['#FF6347', '#3CB371', '#FFD700', '#8A2BE2'],
+                    borderColor: ['#FF6347', '#3CB371', '#FFD700', '#8A2BE2'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+
+        // Seeds Report (Bar Chart)
+        const seedsCtx = document.getElementById('seedsChart').getContext('2d');
+        const seedsChart = new Chart(seedsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April'], // Months
+                datasets: [{
+                    label: 'Seeds Used (Units)',
+                    data: [500, 450, 600, 550], // Example data
+                    backgroundColor: '#4CAF50',
+                    borderColor: '#45a049',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

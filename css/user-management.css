@@ -1,0 +1,134 @@
+/* General Reset */
+body, h1, h2, p, a, nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFFDD0, #F7E7CE); /* Cream white to champagne white */
+    color: #decccc;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.logout-button {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.logout-button a {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button a:hover {
+    background-color: #FFD700; /* Gold hover effect */
+    color: #000; /* Dark text on hover */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* User Information Table */
+.user-info {
+    margin-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.436);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(42, 41, 41, 0.64);
+    color: white;
+}
+
+.user-info h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f3e9b3; /* Gold heading */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #FFD700;
+}
+
+table th {
+    background-color: #649866;
+    color: white;
+}
+
+table tr:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Row hover effect */
+}
+
+/* User Activity Chart */
+.user-activity {
+    text-align: center;
+}
+
+.chart-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.chart-container text {
+    fill: rgb(215, 191, 191); /* Change graph text color to white */
+}
+
+/* Buttons Styling */
+button, .logout-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover, .logout-button a:hover {
+    background-color: #bea204; /* Gold background */
+    color: black;
+    transform: scale(1.05); /* Slight scaling effect */
+    box-shadow: 0 5px 15px rgba(255, 223, 0, 0.7);
+}

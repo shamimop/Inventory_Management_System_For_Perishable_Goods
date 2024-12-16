@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Life-Iub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="assets/icon-of-our-ORG.jpg" alt="Organization Logo">
+            <h1>Agri-Life</h1>
+        </div>
+        <nav>
+            <a href="#login">Log In</a> <!-- Login link redirects to the login section -->
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="home-content">
+            <h2>Welcome to Agri-Life</h2>
+            <p>Manage all inventory records for perishable goods efficiently and effortlessly.</p>
+            <!-- Dynamic Text Container -->
+            <div id="dynamic-text-container">
+                <p id="dynamic-text"></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Login Section -->
+    <section id="login" class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <!-- Username Field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+            <!-- Password Field -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <!-- Role Selection -->
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+                <option value="admin">Admin</option>
+                <option value="supplier">Supplier</option>
+                <option value="producer">Producer</option>
+                <option value="nutritionist">Nutritionist</option>
+            </select>
+            <!-- Submit Button -->
+            <button type="submit">Log In</button>
+        </form>
+        <!-- Back to Home Button -->
+        <div class="back-to-home">
+            <a href="#top">Back to Top</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; Inventory Management System by IUB. All rights reserved 2024.</p>
+    </footer>
+
+    <!-- JavaScript for Dynamic Text -->
+    <script>
+        const messages = [
+            "Leading the market with quality service.",
+            "Innovating the way perishable goods are managed.",
+            "Providing the best in the market, every day.",
+            "Your trusted partner in inventory management.",
+            "Efficiency and quality, at your service.",
+            "Optimizing inventory for a better tomorrow.",
+            "Committed to excellence in every step."
+        ];
+
+        let currentIndex = 0;
+
+        function typeText() {
+            const dynamicText = document.getElementById('dynamic-text');
+            dynamicText.textContent = '';
+            let i = 0;
+            const message = messages[currentIndex];
+            const typingInterval = setInterval(function() {
+                dynamicText.textContent += message.charAt(i);
+                i++;
+                if (i === message.length) {
+                    clearInterval(typingInterval);
+                    setTimeout(function() {
+                        currentIndex = (currentIndex + 1) % messages.length;
+                        typeText();
+                    }, 2000);
+                }
+            }, 100);
+        }
+
+        typeText();
+    </script>
+
+    <!-- JavaScript for Login Form -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const role = document.getElementById('role').value;
+            if (role === 'admin') {
+                window.location.href = 'admin-dashboard.html';
+            } else if (role === 'supplier') {
+                window.location.href = 'add-supplier.html';
+            } else if (role === 'producer') {
+                window.location.href = 'add-producer.html';
+            } else if (role === 'nutritionist') {
+                window.location.href = 'nutritionist.html';
+            }
+        });
+    </script>
+</body>
+</html>

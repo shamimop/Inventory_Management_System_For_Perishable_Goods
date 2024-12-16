@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Supplier</title>
+    <link rel="stylesheet" href="css/add-supplierStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Add New Supplier</h1>
+    </header>
+    <form action="php/add_supplier.php" method="post">
+        <label for="supplier_id">Supplier ID:</label>
+        <input type="text" id="supplier_id" name="supplier_id" required>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="contact_number">Contact Number:</label>
+        <input type="tel" id="contact_number" name="contact_number" required>
+
+        <button type="submit">Save Supplier</button>
+    </form>
+    <!-- Back to Home Button -->
+    <div class="back-to-home">
+        <a href="index.html">Logout</a>
+    </div>
+</body>
+</html>
+<!-- Suppliers Section -->
+<main>
+    <div class="home-content">
+        <h2>Supplier Performance</h2>
+        <p>Track supplier performance based on delivery times and quantity supplied.</p>
+
+        <!-- Supplier Performance Chart -->
+        <div>
+            <canvas id="supplierChart"></canvas>
+        </div>
+    </div>
+</main>
+
+<!-- Add Chart.js code for Supplier Performance -->
+<script>
+    // Supplier Performance Bar Chart
+    const supplierCtx = document.getElementById('supplierChart').getContext('2d');
+    const supplierChart = new Chart(supplierCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Supplier A', 'Supplier B', 'Supplier C', 'Supplier D'], // Supplier names
+            datasets: [{
+                label: 'Performance (Units Supplied)',
+                data: [500, 700, 600, 300], // Data representing the quantity supplied
+                backgroundColor: '#2196F3',
+                borderColor: '#1976D2',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    beginAtZero: true
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
