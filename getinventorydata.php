@@ -33,19 +33,24 @@ if ($result_expiry->num_rows > 0) {
 <body>
     <h2 style="text-align: center;">Inventory Data</h2>
     <?php if (!empty($alerts)): ?>
-        <script>
-            let alertMessage = "⚠ Soon to Expire Crops:\n<?php echo implode('\\n', $alerts); ?>";
-            alert(alertMessage);
-        </script>
+        <div class="alert-box">
+            <strong>⚠ Soon to Expire Crops:</strong><br>
+            <?php
+                foreach ($alerts as $alert) {
+                    echo $alert . "<br>";
+                }
+            ?>
+            <button onclick="this.parentElement.style.display='none'">Close</button>
+        </div>
     <?php endif; ?>
     <table>
         <tr>
             <th>Farm ID</th>
             <th>Crop ID</th>
             <th>Harvest Date</th>
+            <th>Expire Date</th>
             <th>Quantity</th>
-            <th>Harvest ID</th>
-            <th>ExpireDate</th>
+            <th>HarvestID</th>
         </tr>
         <?php
         // Display data in table rows
@@ -55,7 +60,7 @@ if ($result_expiry->num_rows > 0) {
                 echo "<td>" . $row["Farm_id"] . "</td>";
                 echo "<td>" . $row["crop_id"] . "</td>";
                 echo "<td>" . $row["Date"] . "</td>";
-                echo "<td>" . $row["Date"] . "</td>";
+                echo "<td>" . $row["expireDate"] . "</td>";
                 echo "<td>" . $row["Quantity"] . "</td>";
                 echo "<td>" . $row["HarvestID"] . "</td>";
                 echo "</tr>";

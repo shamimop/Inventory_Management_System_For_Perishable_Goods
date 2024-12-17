@@ -56,6 +56,7 @@ $conn->close();
         <input type="number" id="Quantity" name="Quantity" placeholder="Quantity of harvest" required>
 
         <input type="submit" value="Add Record">
+        <a href="getinventorydata.php">Inventory Data</a>
     </form>
 </body>
 </html>
