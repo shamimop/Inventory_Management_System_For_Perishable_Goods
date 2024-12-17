@@ -1,1 +1,3 @@
-# Inventory_Management_System_For_Perishable_Goods
+inventory management system 
+a project done as a part of database
+management course
