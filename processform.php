@@ -71,7 +71,7 @@ $result = $conn->query($sql);
                    
                     echo "<td>" . htmlspecialchars($row['Feedback']) . "</td>";
                     echo "<td>
-                <a href='editreport.php?Inspection_Date=" . $row['Inspection_Date'] . "&Farm_id=" . urlencode($row['Farm_id']) ."'>Edit</a> |
+                <a href='editsreport.php?Inspection_Date=" . $row['Inspection_Date'] . "&Farm_id=" . urlencode($row['Farm_id']) ."'>Edit</a> |
                 <a href='deletesreport.php?Inspection_Date=" . $row['Inspection_Date'] ."&Farm_id=" . urlencode($row['Farm_id']) . "' onclick='return confirm(\"Are you sure you want to delete this farm?\");'>Delete</a>
               </td>";
                     echo "</tr>";
