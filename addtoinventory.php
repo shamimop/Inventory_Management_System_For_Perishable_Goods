@@ -1,15 +1,19 @@
 <?php
 include 'database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $farm_id = $_POST['farm_id'];
-    $cropname = $_POST['cropname'];
-    $harvestdate = $_POST['harvestdate'];
-    $storageID = $_POST['storageID'];
-    $cropID = $_POST['crop_id'];
+    
+    
+    
+    $HarvestID = $_POST['HarvestID'];
+    $harvestdate = $_POST['Date'];
+    $Quantity = $_POST['Quantity'];
+    $cropid = $_POST['crop_id'];
+    $farm_id = $_POST['Farm_id'];
+    $expireDate = $_POST['expireDate'];
 
     // Insert query
-    $sql = "INSERT INTO inventory_track (Farm_id, cropname, harvestdate, storageID,crop_id) 
-            VALUES ('$farm_id', '$cropname', '$harvestdate', '$storageID','$cropID')";
+    $sql = "INSERT INTO harvest (`HarvestID`,`Date`,`Quantity`,`crop_id`,`Farm_id`,`expireDate`) 
+            VALUES ('$HarvestID','$harvestdate',$Quantity,'$cropid','$farm_id','$expireDate' )";
 
     // Execute query and check result
     if ($conn->query($sql) === TRUE) {
@@ -36,18 +40,20 @@ $conn->close();
     <?php endif; ?>
     <form method="POST" action="">
         <label for="farm_id">Farm ID:</label>
-        <input type="text" id="farm_id" name="farm_id" placeholder="Enter Farm ID" required>
+        <input type="text" id="Farm_id" name="Farm_id" placeholder="Enter Farm ID" required>
 
-        <label for="cropname">Crop Name:</label>
-        <input type="text" id="cropname" name="cropname" placeholder="Enter Crop Name" required>
+        <label for="cropname">Crop id:</label>
+        <input type="text" id="crop_id" name="crop_id" placeholder="Enter Crop Name" required>
 
         <label for="harvestdate">Harvest Date:</label>
-        <input type="date" id="harvestdate" name="harvestdate" required>
+        <input type="date" id="Date" name="Date" required>
+        <label for="Expiredate">Expire Date:</label>
+        <input type="date" id="expireDate" name="expireDate" required>
 
-        <label for="storageID">Storage ID:</label>
-        <input type="text" id="storageID" name="storageID" placeholder="Enter Storage ID" required>
-        <label for="crop_id">crop ID:</label>
-        <input type="text" id="crop_id" name="crop_id" placeholder="Enter Storage ID" required>
+        <label for="harvestID">Harvest ID:</label>
+        <input type="text" id="HarvestID" name="HarvestID" placeholder="Enter harvest ID" required>
+        <label for="crop_id">Quantity:</label>
+        <input type="number" id="Quantity" name="Quantity" placeholder="Quantity of harvest" required>
 
         <input type="submit" value="Add Record">
     </form>

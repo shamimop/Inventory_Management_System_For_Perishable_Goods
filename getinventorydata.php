@@ -1,7 +1,25 @@
 <?php
 include 'database.php';
-$sql = "SELECT Farm_id, cropname, harvestdate, storageID FROM inventory_track"; // Replace 'your_table_name' with your table name
+$sql = "SELECT HarvestID, 'Date' ,Quantity,crop_id,Farm_id,`expireDate`  FROM harvest"; // Replace 'your_table_name' with your table name
 $result = $conn->query($sql);
+
+
+
+$sql_expiry = "SELECT crop_id, Quantity, `expireDate`
+               FROM harvest
+               WHERE `expireDate` BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 2 DAY)";
+
+$result_expiry = $conn->query($sql_expiry);
+
+$alerts = []; // Array to store alert messages
+$rows = [];   // Array to store all rows for display
+
+// Process expiring crops
+if ($result_expiry->num_rows > 0) {
+    while ($row = $result_expiry->fetch_assoc()) {
+        $alerts[] = "Crop: " . $row['crop_id'] . " (Quantity: " . $row['Quantity'] . ") is expiring on " . $row['expireDate'];
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,12 +32,20 @@ $result = $conn->query($sql);
 </head>
 <body>
     <h2 style="text-align: center;">Inventory Data</h2>
+    <?php if (!empty($alerts)): ?>
+        <script>
+            let alertMessage = "⚠ Soon to Expire Crops:\n<?php echo implode('\\n', $alerts); ?>";
+            alert(alertMessage);
+        </script>
+    <?php endif; ?>
     <table>
         <tr>
             <th>Farm ID</th>
-            <th>Crop Name</th>
+            <th>Crop ID</th>
             <th>Harvest Date</th>
-            <th>Storage ID</th>
+            <th>Quantity</th>
+            <th>Harvest ID</th>
+            <th>ExpireDate</th>
         </tr>
         <?php
         // Display data in table rows
@@ -27,9 +53,11 @@ $result = $conn->query($sql);
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row["Farm_id"] . "</td>";
-                echo "<td>" . $row["cropname"] . "</td>";
-                echo "<td>" . $row["harvestdate"] . "</td>";
-                echo "<td>" . $row["storageID"] . "</td>";
+                echo "<td>" . $row["crop_id"] . "</td>";
+                echo "<td>" . $row["Date"] . "</td>";
+                echo "<td>" . $row["Date"] . "</td>";
+                echo "<td>" . $row["Quantity"] . "</td>";
+                echo "<td>" . $row["HarvestID"] . "</td>";
                 echo "</tr>";
             }
         } else {
