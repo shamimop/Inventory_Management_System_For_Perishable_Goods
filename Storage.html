@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Management</title>
+    <link rel="stylesheet" href="css/storagestyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Storage Management</h1>
+        <!-- Form starts here -->
+        <form action="getstoragemange.php" method="POST">
+            <div class="form-group">
+                <label for="storage-type">Select Storage Type:</label>
+                <select id="type" name="type">
+                    <option value="crop">Crop Storage</option>
+                    <option value="perishable">Perishable Goods Storage</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="item">Select Item (Crop/Seed):</label>
+                <select id="crop" name="crop">
+                    <option value="wheat">Wheat</option>
+                    <option value="rice">Rice</option>
+                    <option value="maize">Maize</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="humidity">Humidity Control:</label>
+                <input type="number" id="humidity" name="humidity" placeholder="Set Humidity (%)">
+            </div>
+
+            <div class="form-group">
+                <label for="temperature">Temperature Control:</label>
+                <input type="number" id="temperature" name="temperature" placeholder="Set Temperature (°C)">
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="add" name="action" value="add">Add</button>
+                <button type="submit" id="delete" name="action" value="delete">Delete</button>
+                <button type="submit" id="save" name="action" value="save">Save</button>
+                <button type="submit" id="search" name="action" value="search">Search</button>
+            </div>
+        </form>
+        <!-- Form ends here -->
+
+        <div class="chart">
+            <h2>7-Day Storage Capacity Chart</h2>
+            <canvas id="storageChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('storageChart').getContext('2d');
+        const storageChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+                datasets: [{
+                    label: 'Storage Capacity (kg)',
+                    data: [50, 70, 60, 80, 90, 85, 75],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
