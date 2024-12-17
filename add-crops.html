@@ -13,6 +13,7 @@
     </header>
 
     <main>
+        <form action="getcropdata.php" method="POST">
         <section class="add-crop">
             <h2>Add Crop</h2>
             <form id="addCropForm">
@@ -22,18 +23,16 @@
                 <label for="cropName">Crop Name:</label>
                 <input type="text" id="cropName" name="cropName" required>
                 
-                <label for="cropType">Crop Type:</label>
-                <input type="text" id="cropType" name="cropType" required>
+                <label for="minimumTemperature">Minimum Temperature:</label>
+                <input type="number" id="minimumTemperature" name="minimumTemperature" required>
 
                 <label for="cropSeason">Crop Season:</label>
                 <input type="text" id="cropSeason" name="cropSeason" required>
 
-                <label for="quantity">Quantity (kg):</label>
-                <input type="number" id="quantity" name="quantity" required>
+                <label for="minimumHumidity">MinimumHumidity:</label>
+                <input type="number" id="minimumHumidity" name="minimumHumidity" required>
                 
-                <label for="expiryDate">Expiry Date:</label>
-                <input type="date" id="expiryDate" name="expiryDate" required>
-
+                
                 <button type="submit">Add Crop</button>
             </form>
         </section>
