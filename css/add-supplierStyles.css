@@ -1,0 +1,111 @@
+/***** /* ===== Styles for Add Supplier Page ===== * ***/
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #3b35357a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('../assets/jpeg-pic1.jpeg') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(118, 207, 135, 0.377); /* 50% dimming effect */
+    z-index: -1;
+}
+
+header {
+    font-size: 2em;
+    color: rgb(165, 233, 88);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    background-color: rgba(178, 231, 162, 0.644);
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(22, 66, 53, 0.459);
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #437403;
+}
+
+form input[type="text"],
+form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #0c683a;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #d1e2a9;
+    transition: border-color 0.9s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="tel"]:focus {
+    border-color: #21803d9c;
+    outline: none;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(229, 255, 223);
+    background-color: #02290d9c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #01250c;
+}
+/* Styling for Back to Home Button */
+.back-to-home {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-to-home a {
+    text-decoration: none;
+    color: #84f168ee;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #185a07;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-to-home a:hover {
+    background-color: #42972c;
+    color: #d2ffdf;
+}
