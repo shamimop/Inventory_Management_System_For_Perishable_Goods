@@ -63,6 +63,10 @@ if ($result_expiry->num_rows > 0) {
                 echo "<td>" . $row["expireDate"] . "</td>";
                 echo "<td>" . $row["Quantity"] . "</td>";
                 echo "<td>" . $row["HarvestID"] . "</td>";
+                echo "<td>";
+        echo "<a href='edit.php?HarvestID=" . $row["HarvestID"] . "' class='btn-edit'>Edit</a> ";
+        echo "<a href='delfrominvent.php?HarvestID=" . $row["HarvestID"] . "' class='btn-delete' onclick='return confirm(\"Are you sure you want to delete this record?\")'>Delete</a>";
+        echo "</td>";
                 echo "</tr>";
             }
         } else {
@@ -71,6 +75,7 @@ if ($result_expiry->num_rows > 0) {
         $conn->close();
         ?>
     </table>
+    <a href="admin-dashboard.html">back to dash</a>
 </body>
 </html>
 
