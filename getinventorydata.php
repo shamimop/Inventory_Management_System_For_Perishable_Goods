@@ -75,6 +75,7 @@ if ($result_expiry->num_rows > 0) {
         $conn->close();
         ?>
     </table>
+    <a href="admin-dashboard.html">back to dash</a>
 </body>
 </html>
 
