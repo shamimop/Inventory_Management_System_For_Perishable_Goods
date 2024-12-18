@@ -1,0 +1,119 @@
+/* General Reset */
+body, h1, h2, p, a, nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../assets/crop33.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: #decccc;
+}
+
+/* Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.admin-header .logo h1 {
+    font-size: 24px;
+}
+
+.admin-header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.admin-header nav a:hover {
+    color: #FFD700; /* Gold hover effect */
+}
+
+/* Main Content */
+.dashboard-container {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-overview h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.dashboard-overview p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #45a049;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(62, 234, 82, 0.7);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    color: #ffffff;
+}
