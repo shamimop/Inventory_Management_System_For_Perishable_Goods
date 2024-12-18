@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, h2, p, label, select, input, button, a {
+body, h1, h2, p, label, select, input, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -108,28 +108,21 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Navigation Buttons */
-.navigation-buttons {
+/* Back to Top Button */
+.back-to-top {
     margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
 }
 
-.navigation-buttons a {
+.back-to-top a {
     display: inline-block;
     padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
     background-color: #4caf50;
+    color: white;
+    text-decoration: none;
     border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.2s;
-    width: 48%;
+    transition: background-color 0.3s;
 }
 
-.navigation-buttons a:hover {
+.back-to-top a:hover {
     background-color: #388e3c;
-    transform: scale(1.05);
 }

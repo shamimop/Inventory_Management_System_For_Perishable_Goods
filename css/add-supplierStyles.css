@@ -6,18 +6,17 @@
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-family: Arial, sans-serif;
     color: #3b35357a;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Align content at the top */
+    justify-content: center;
     min-height: 100vh;
+    background: url('../assets/jpeg-pic1.jpeg') center/cover no-repeat;
     position: relative;
-    overflow-y: auto; /* Enable vertical scrolling */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow: hidden;
 }
 
 body::before {
@@ -27,20 +26,15 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(185, 230, 194); /* 50% dimming effect */
+    background: rgba(118, 207, 135, 0.377); /* 50% dimming effect */
     z-index: -1;
 }
 
-/* Header Styling */
 header {
     font-size: 2em;
-    color: rgb(92, 128, 103);
+    color: rgb(165, 233, 88);
     margin-bottom: 20px;
     text-align: center;
-    background-color: rgba(178, 231, 162, 0.644);
-    width: 100%;
-    padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(22, 66, 53, 0.459);
 }
 
 /* Form Styling */
@@ -95,21 +89,7 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
     background-color: #01250c;
 }
-
-/* Chart Section */
-.chart-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(178, 231, 162, 0.644);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(22, 66, 53, 0.459);
-    overflow-x: auto; /* Allow horizontal scrolling for large charts */
-    overflow-y: visible; /* Ensure the chart is fully visible vertically */
-}
-
-/* Back to Home Button */
+/* Styling for Back to Home Button */
 .back-to-home {
     margin-top: 20px;
     text-align: center;
@@ -117,11 +97,11 @@ form button[type="submit"]:hover {
 
 .back-to-home a {
     text-decoration: none;
-    color: #144b06ee;
+    color: #84f168ee;
     font-weight: bold;
     padding: 10px 20px;
     border: 2px solid #185a07;
-    border-radius: 9px;
+    border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
 }
 

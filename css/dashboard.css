@@ -8,13 +8,11 @@ body, h1, h2, p, a, nav {
 /* Body Style */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url("../assets/crop33.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    color: #decccc;
+    background: linear-gradient(to bottom right, #4caf50, #2c3e50);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -106,7 +104,7 @@ body {
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(62, 234, 82, 0.7);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
 }
 
 /* Footer */
@@ -116,4 +114,23 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
     font-size: 14px;
     color: #ffffff;
+}
+/* Back to Home Button */
+.back-to-home {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.back-to-home a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.back-to-home a:hover {
+    background-color: #388E3C;
 }

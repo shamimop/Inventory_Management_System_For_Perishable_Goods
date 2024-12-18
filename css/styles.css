@@ -9,7 +9,7 @@ body, h1, h2, p, nav, a, select, input, button {
 body {
     font-family: Arial, sans-serif;
     position: relative;
-    background: url('../assets/crop33.jpg') no-repeat center center fixed;
+    background: url('../assets/HOME1.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;
     display: flex;
@@ -81,15 +81,6 @@ main p {
     font-size: 18px;
 }
 
-/* Dynamic Text Section */
-#dynamic-text-container {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white; /* White text color */
-    text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.7); /* Green shadow */
-}
-
 /* Footer Section */
 footer {
     text-align: center;
@@ -99,32 +90,31 @@ footer {
     position: relative; /* Keeps footer in flow */
 }
 
-/* Updated Login Container */
+/* Login Page Styles */
 .login-container {
-    max-width: 50000px; /* Increased width */
+    max-width: 400px;
     margin: 100px auto;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.8); /* Dark background */
-    border-radius: 50px;
-    box-shadow: 10 10 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
-/* Additional styles for a consistent layout */
 .login-container h2 {
     color: #ffffff;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .login-container label {
     display: block;
     color: #ffffff;
-    margin: 20px 100 3px;
+    margin: 10px 0 5px;
     text-align: left;
 }
 
-.login-container input,
-.login-container select {
+.login-container select,
+.login-container input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -155,22 +145,11 @@ footer {
     background-color: #45a049;
 }
 
-/* Back to Home button styles */
-.back-to-home {
-    margin-top: 20px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 15px;
+    }
 }
 
-.back-to-home a {
-    text-decoration: none;
-    color: #84f168ee;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: 2px solid #185a07;
-    border-radius: 50px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.back-to-home a:hover {
-    background-color: #42972c;
-    color: #d2ffdf;
-}
