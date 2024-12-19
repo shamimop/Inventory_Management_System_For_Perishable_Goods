@@ -17,8 +17,8 @@ body {
 
 /* Container */
 .container {
-  width: 90%;
-  max-width: 1200px;
+  width: 50%;
+  max-width: 1000px;
   margin: 40px auto;
   background: #ffffff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -116,7 +116,7 @@ table tr:nth-child(even) {
 
 .modal-content {
   background: #fff;
-  margin: 15% auto;
+  margin: 5% auto;
   padding: 20px;
   border-radius: 10px;
   width: 40%;

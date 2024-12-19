@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbname = "farm";
+$dbname = "inventory_management_sys";
 
 // Create a connection to the database
 $conn = new mysqli($host, $user, $password, $dbname);
@@ -16,8 +16,8 @@ if ($conn->connect_error) {
 // Check if form data is received
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get data from POST request
-    $ProducerID = $_POST['ProducerID'] ?? null;
-    $FarmID = $_POST['FarmID'] ?? null;
+    $ProducerID = $_POST['Producer_ID'] ?? null;
+    $FarmID = $_POST['Farm_id'] ?? null;
     $farmname = $_POST['farmname'] ?? null;
     $plotno = $_POST['plotno'] ?? null;
     $road = $_POST['road'] ?? null;
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate the data
     if ($ProducerID && $FarmID && $farmname && $plotno && $road && $districtname) {
         // SQL query to insert data into the 'farm' table
-        $sql = "INSERT INTO farm (ProducerID, FarmID, farmname, plotno, road, districtname) 
+        $sql = "INSERT INTO farm (Producer_ID, Farm_id, farmname, plotno, road, districtname) 
                 VALUES ('$ProducerID', '$FarmID', '$farmname', '$plotno', '$road', '$districtname')";
 
         if ($conn->query($sql) === TRUE) {

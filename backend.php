@@ -3,7 +3,7 @@
 $host = "localhost";       // Your database host (e.g., localhost)
 $user = "root";            // Your database username (default root in XAMPP)
 $password = "";            // Your database password (default blank in XAMPP)
-$dbname = "farm";          // Your database name (farm)
+$dbname = "inventory_management_sys";          // Your database name (farm)
 
 // Create a connection to the database
 $conn = new mysqli($host, $user, $password, $dbname);

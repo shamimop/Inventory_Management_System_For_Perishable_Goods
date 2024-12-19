@@ -63,10 +63,10 @@
             <h2>Add New Farm</h2>
             <form id="addFarmForm" action="add_farm.php" method="POST">
               <label for="ProducerID">Producer ID:</label>
-              <input type="text" id="ProducerID" name="ProducerID" placeholder="Enter Producer ID" required>
+              <input type="text" id="Producer_ID" name="Producer_ID" placeholder="Enter Producer ID" required>
           
               <label for="FarmID">Farm ID:</label>
-              <input type="text" id="FarmID" name="FarmID" placeholder="Enter Farm ID" required>
+              <input type="text" id="Farm_id" name="Farm_id" placeholder="Enter Farm ID" required>
           
               <label for="farmName">Farm Name:</label>
               <input type="text" id="farmName" name="farmname" placeholder="Enter Farm Name" required>
@@ -102,7 +102,7 @@
     
     <script>
       // Fetch data from the backend PHP file
-      fetch("backend.php') // Replace 'backend.php' with the actual path if needed")
+      fetch("add_farm.php') // Replace 'backend.php' with the actual path if needed")
           .then(response => response.json()) // Parse the response as JSON
           .then(data => {
               const tableBody = document.getElementById('farmTableBody'); // Target the table body
@@ -112,8 +112,8 @@
               data.forEach(farm => {
                   rows += `
                       <tr>
-                          <td>${farm.ProducerID}</td>
-                          <td>${farm.FarmID}</td>
+                          <td>${farm.Producer_ID}</td>
+                          <td>${farm.Farm_id}</td>
                           <td>${farm.farmname}</td>
                           <td>${farm.plotno}</td>
                           <td>${farm.road}</td>
