@@ -1,11 +1,11 @@
 <?php
 include 'database.php';
-$sql = "SELECT HarvestID, 'Date' ,Quantity,crop_id,Farm_id,`expireDate`  FROM harvest"; // Replace 'your_table_name' with your table name
+$sql = "SELECT HarvestID, `Date` ,Quantity,crop_id,Farm_id,`expireDate`  FROM harvest"; // Replace 'your_table_name' with your table name
 $result = $conn->query($sql);
 
 
 
-$sql_expiry = "SELECT crop_id, Quantity, `expireDate`
+$sql_expiry = "SELECT crop_id, Quantity, `expireDate`,HarvestID
                FROM harvest
                WHERE `expireDate` BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 2 DAY)";
 
@@ -17,7 +17,7 @@ $rows = [];   // Array to store all rows for display
 // Process expiring crops
 if ($result_expiry->num_rows > 0) {
     while ($row = $result_expiry->fetch_assoc()) {
-        $alerts[] = "Crop: " . $row['crop_id'] . " (Quantity: " . $row['Quantity'] . ") is expiring on " . $row['expireDate'];
+        $alerts[] = "Crop: " . $row['crop_id'] . "HarvestID: " .$row['HarvestID']." (Quantity: " . $row['Quantity'] . ") is expiring on " . $row['expireDate'];
     }
 }
 ?>
@@ -64,7 +64,7 @@ if ($result_expiry->num_rows > 0) {
                 echo "<td>" . $row["Quantity"] . "</td>";
                 echo "<td>" . $row["HarvestID"] . "</td>";
                 echo "<td>";
-        echo "<a href='edit.php?HarvestID=" . $row["HarvestID"] . "' class='btn-edit'>Edit</a> ";
+        echo "<a href='editinventory.php?HarvestID=" . $row["HarvestID"] . "' class='btn-edit'>Edit</a> ";
         echo "<a href='delfrominvent.php?HarvestID=" . $row["HarvestID"] . "' class='btn-delete' onclick='return confirm(\"Are you sure you want to delete this record?\")'>Delete</a>";
         echo "</td>";
                 echo "</tr>";
