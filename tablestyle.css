@@ -15,7 +15,7 @@ body{
     flex-direction: column;
 } 
 .alert-box {
-  background-color: #f8d7da;
+  background-color: #f54e5c;
   color: #721c24;
   padding: 20px;
   margin: 10px 0;
@@ -26,7 +26,7 @@ body{
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 50%;
   z-index: 1000;
 }
 
