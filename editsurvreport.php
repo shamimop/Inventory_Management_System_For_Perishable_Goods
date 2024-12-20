@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "UPDATE tblfarmsurvey SET AgriOfficerId = ?,Inspection_Date =?, Feedback = ?, Crop_Quality = ?,Farm_id = ? WHERE Inspection_Date = ? AND Farm_id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssis", $Ag_id,$InsDate, $feedback, $Quality, $Farm_id);
+    $stmt->bind_param("sssss", $Ag_id,$InsDate, $feedback, $Quality, $Farm_id);
 
     if ($stmt->execute()) {
         echo "<script>alert('Record updated successfully!'); window.location.href='Farmvisitreport.html';</script>";
@@ -61,11 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="Inspection_Date">Inspection_Date:</label>
             <input type="date" name="Inspection_Date" id="Inspection_Date" value="<?php echo htmlspecialchars($row['Inspection_Date']); ?>" required>
 
-            <label for="Date">Feedback</label>
-            <input type="date" name="Feedback" id="Feedback" value="<?php echo htmlspecialchars($row['Feedback']); ?>" required>
+            <label for="Feedback">Feedback</label>
+            <input type="text" name="Feedback" id="Feedback" value="<?php echo htmlspecialchars($row['Feedback']); ?>" required>
 
             <label for="Crop_Quality">Crop_Quality</label>
-            <input type="Crop_Quality" name="expireDate" id="Crop_Quality" value="<?php echo htmlspecialchars($row['Crop_Quality']); ?>" required>
+            <input type="text" name="expireDate" id="Crop_Quality" value="<?php echo htmlspecialchars($row['Crop_Quality']); ?>" required>
 
             <label for="Farm_id">Farm id</label>
             <input type="text" name="Farm_id" id="Farm_id" value="<?php echo htmlspecialchars($row['Farm_id']); ?>" required>
