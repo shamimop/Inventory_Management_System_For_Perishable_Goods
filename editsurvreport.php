@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="Feedback" id="Feedback" value="<?php echo htmlspecialchars($row['Feedback']); ?>" required>
 
             <label for="Crop_Quality">Crop_Quality</label>
-            <input type="text" name="expireDate" id="Crop_Quality" value="<?php echo htmlspecialchars($row['Crop_Quality']); ?>" required>
+            <input type="text" name="Crop_Quality" id="Crop_Quality" value="<?php echo htmlspecialchars($row['Crop_Quality']); ?>" required>
 
             <label for="Farm_id">Farm id</label>
             <input type="text" name="Farm_id" id="Farm_id" value="<?php echo htmlspecialchars($row['Farm_id']); ?>" required>
