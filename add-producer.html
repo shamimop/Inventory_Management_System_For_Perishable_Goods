@@ -10,18 +10,18 @@
     <header>
         <h1>Add New Producer</h1>
     </header>
-    <form action="php/add_producer.php" method="post">
-        <label for="producer_id">Producer ID:</label>
-        <input type="text" id="producer_id" name=Producer_ID" required>
+    <form action="add_producer.php" method="post">
+        <label for="Producer_ID">Producer ID:</label>
+        <input type="text" id="Producer_ID" name="Producer_ID" required>
 
         <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first name" required>
+        <input type="text" id="firstname" name="firstname" required>
 
         <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last name" required>
+        <input type="text" id="lastname" name="lastname" required>
 
         <label for="contact_number">Contact Number:</label>
-        <input type="tel" id="contact_number" name="contact" required>
+        <input type="tel" id="contact" name="contact" required>
 
         <button type="submit">Save Producer Data</button>
     </form>
