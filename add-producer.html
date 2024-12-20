@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Producer</title>
+    <link rel="stylesheet" href="css/add-producerStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Add New Producer</h1>
+    </header>
+    <form action="php/add_producer.php" method="post">
+        <label for="producer_id">Producer ID:</label>
+        <input type="text" id="producer_id" name="producer_id" required>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="contact_number">Contact Number:</label>
+        <input type="tel" id="contact_number" name="contact_number" required>
+
+        <button type="submit">Save Producer Data</button>
+    </form>
+    <!-- Back to Home Button -->
+    <div class="back-to-home">
+        <a href="index.html">Logout</a>
+    </div>
+</body>
+</html>
